@@ -12,7 +12,7 @@ public class Picker : MonoBehaviour
         mainCube = GameObject.Find("MainCube");
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         mainCube.transform.position = new Vector3(transform.position.x, height + 1, transform.position.z);

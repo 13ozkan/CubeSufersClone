@@ -7,8 +7,6 @@ public class CollectableCube : MonoBehaviour
     private int index;
     public Picker picker;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         isCollect = false;
@@ -30,12 +28,15 @@ public class CollectableCube : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
+            Debug.Log("Obstacle: Carpti");
             picker.HeightDecrease();
+            transform.localPosition = new Vector3(0, -index, 0);
             transform.parent = null;
             GetComponent<BoxCollider>().enabled = false;
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
+
     public bool GetIsCollect()
     { 
         return isCollect;
@@ -50,8 +51,4 @@ public class CollectableCube : MonoBehaviour
     {
         this.index = index;
     }
-
-
-
-    
 }
